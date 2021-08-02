@@ -7,6 +7,4 @@ target 'ChartExample' do
 
   # Pods for ChartExample
 pod 'Charts'
-pod 'SwiftSoup'
-pod 'KRWalkThrough'
 end

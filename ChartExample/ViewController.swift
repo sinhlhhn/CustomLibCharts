@@ -8,8 +8,6 @@
 
 import UIKit
 import Charts
-import SwiftSoup
-import KRWalkThrough
 
 
 class ViewController: UIViewController {

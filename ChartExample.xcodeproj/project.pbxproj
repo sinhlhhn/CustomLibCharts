@@ -20,7 +20,6 @@
 		2E5505DE264F73B800C89AF1 /* BudgetCombinedChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5505DD264F73B800C89AF1 /* BudgetCombinedChartRenderer.swift */; };
 		2E5505E1264F73DC00C89AF1 /* BudgetBarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5505E0264F73DC00C89AF1 /* BudgetBarChartRenderer.swift */; };
 		2EAD3595264122BC005EC611 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD3594264122BC005EC611 /* MarkerView.swift */; };
-		2ECC7E00264291C100060EBE /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC7DFF264291C100060EBE /* TutorialViewController.swift */; };
 		89AD9A66D98D9AA219A648C5 /* Pods_ChartExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6784FA577447B81825FA3C /* Pods_ChartExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		2E5505DD264F73B800C89AF1 /* BudgetCombinedChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCombinedChartRenderer.swift; sourceTree = "<group>"; };
 		2E5505E0264F73DC00C89AF1 /* BudgetBarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetBarChartRenderer.swift; sourceTree = "<group>"; };
 		2EAD3594264122BC005EC611 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
-		2ECC7DFF264291C100060EBE /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		A1B44276BA7E59F04A9E41E6 /* Pods-ChartExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChartExample.debug.xcconfig"; path = "Target Support Files/Pods-ChartExample/Pods-ChartExample.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6784FA577447B81825FA3C /* Pods_ChartExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChartExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E264A732AAE3992FEB14B614 /* Pods-ChartExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChartExample.release.xcconfig"; path = "Target Support Files/Pods-ChartExample/Pods-ChartExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				2E31ACE024D7E89800ECF046 /* AppDelegate.swift */,
 				2E31ACE224D7E89800ECF046 /* SceneDelegate.swift */,
 				2E31ACE424D7E89800ECF046 /* ViewController.swift */,
-				2ECC7DFF264291C100060EBE /* TutorialViewController.swift */,
 				2EAD3594264122BC005EC611 /* MarkerView.swift */,
 				2E31ACE624D7E89800ECF046 /* Main.storyboard */,
 				2E31ACE924D7E89B00ECF046 /* Assets.xcassets */,
@@ -241,7 +238,6 @@
 				2E5505E1264F73DC00C89AF1 /* BudgetBarChartRenderer.swift in Sources */,
 				2EAD3595264122BC005EC611 /* MarkerView.swift in Sources */,
 				2E31ACE524D7E89800ECF046 /* ViewController.swift in Sources */,
-				2ECC7E00264291C100060EBE /* TutorialViewController.swift in Sources */,
 				2E5505DE264F73B800C89AF1 /* BudgetCombinedChartRenderer.swift in Sources */,
 				2E31ACE124D7E89800ECF046 /* AppDelegate.swift in Sources */,
 				2E5505D2264E8D2300C89AF1 /* BudgetYAxisRenderer.swift in Sources */,
