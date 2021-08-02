@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="ChartExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="btn1" destination="DI8-ZL-bmT" id="376-XC-ks3"/>
+                        <outlet property="btn2" destination="VMu-DF-wtr" id="Boa-C2-9uK"/>
+                        <outlet property="btn3" destination="pMT-NR-dGv" id="bI5-EM-zfH"/>
+                        <outlet property="btn4" destination="qPX-nV-t9W" id="hAB-dy-ral"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1423.1884057971015" y="101.78571428571428"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="LAt-VV-JJ7">
+            <objects>
+                <viewController storyboardIdentifier="TutorialViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TT7-S3-Oon" customClass="TutorialViewController" customModule="ChartExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WRK-hQ-Mmc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI8-ZL-bmT">
+                                <rect key="frame" x="16" y="60" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ygt-kL-FqV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMu-DF-wtr">
+                                <rect key="frame" x="16" y="116" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2bz-Ls-vMX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMT-NR-dGv">
+                                <rect key="frame" x="16" y="220" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="w4a-Ja-FeG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPX-nV-t9W">
+                                <rect key="frame" x="16" y="386" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ulK-Iz-50l"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XFm-9y-BPj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XFm-9y-BPj" firstAttribute="trailing" secondItem="DI8-ZL-bmT" secondAttribute="trailing" constant="16" id="6ms-0n-OIL"/>
+                            <constraint firstItem="VMu-DF-wtr" firstAttribute="leading" secondItem="DI8-ZL-bmT" secondAttribute="leading" id="9Hf-Ts-Vn9"/>
+                            <constraint firstItem="DI8-ZL-bmT" firstAttribute="top" secondItem="XFm-9y-BPj" secondAttribute="top" constant="16" id="GWv-aD-oxj"/>
+                            <constraint firstItem="pMT-NR-dGv" firstAttribute="trailing" secondItem="VMu-DF-wtr" secondAttribute="trailing" id="Hcl-1w-OHC"/>
+                            <constraint firstItem="VMu-DF-wtr" firstAttribute="top" secondItem="DI8-ZL-bmT" secondAttribute="bottom" constant="16" id="QWq-Wd-hcb"/>
+                            <constraint firstItem="DI8-ZL-bmT" firstAttribute="leading" secondItem="XFm-9y-BPj" secondAttribute="leading" constant="16" id="SQ5-w8-Jdp"/>
+                            <constraint firstItem="qPX-nV-t9W" firstAttribute="leading" secondItem="pMT-NR-dGv" secondAttribute="leading" id="XFU-Tm-Db5"/>
+                            <constraint firstItem="pMT-NR-dGv" firstAttribute="top" secondItem="VMu-DF-wtr" secondAttribute="bottom" constant="64" id="cuU-Em-CwO"/>
+                            <constraint firstItem="qPX-nV-t9W" firstAttribute="top" secondItem="pMT-NR-dGv" secondAttribute="bottom" constant="126" id="f89-Su-BSw"/>
+                            <constraint firstItem="qPX-nV-t9W" firstAttribute="trailing" secondItem="pMT-NR-dGv" secondAttribute="trailing" id="gwK-Z0-GKr"/>
+                            <constraint firstItem="pMT-NR-dGv" firstAttribute="leading" secondItem="VMu-DF-wtr" secondAttribute="leading" id="lTv-9C-9Vw"/>
+                            <constraint firstItem="VMu-DF-wtr" firstAttribute="trailing" secondItem="DI8-ZL-bmT" secondAttribute="trailing" id="pQ9-hV-VbH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odd-Hc-xHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4539" y="72"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
