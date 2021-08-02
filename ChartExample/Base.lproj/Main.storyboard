@@ -16,8 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-Dc-YDE">
+                                <rect key="frame" x="16" y="418" width="382" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tDB-LZ-45z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOh-Dg-FoN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AZc-Dc-YDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1g9-L4-dyp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AZc-Dc-YDE" secondAttribute="trailing" constant="16" id="52I-0g-ccn"/>
+                            <constraint firstItem="AZc-Dc-YDE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JZw-cq-0Y9"/>
+                            <constraint firstItem="AZc-Dc-YDE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gva-At-yoC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btn1" destination="DI8-ZL-bmT" id="376-XC-ks3"/>

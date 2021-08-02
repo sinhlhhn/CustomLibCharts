@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var chartView: UIView!
     
     var combineChart = BudgetCombineChartView()
+    var isRemove = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class ViewController: UIViewController {
         self.combineChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
     }
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        combineChart.removeFromSuperview()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.setUpChart()
+        }
+    }
     func setUpChart() {
         //frame
         combineChart.frame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 170) //tạo frame để chứa biểu đồ
@@ -62,6 +69,7 @@ class ViewController: UIViewController {
         var entries = [BarChartDataEntry]()
         var entries2 = [BarChartDataEntry]()// tạo mảng giá trị của biểu đồ
         var lineEntries = [ChartDataEntry]()
+        var lineEntries2 = [ChartDataEntry]()
         
         let arr:[Double] = [1,3,2,4,6,5,7,
                             1,3,2,4,6,5,7,
@@ -74,7 +82,8 @@ class ViewController: UIViewController {
                              10,11,10,9,8,7,2,
                              10,11,10,9,8,7,2,
                              10,11]
-        let lineChartEntry: [Double] = [12,11,11,9,6,4,2,0,
+        let lineChartEntry: [Double] = [12,11]
+        let lineChartEntry2: [Double] = [11,11,9,6,4,2,0,
                                         12,11,11,9,6,4,2,0,
                                         12,11,11,9,6,4,2,0,
                                         12,11,11,9,6,4,2,0,
@@ -82,7 +91,15 @@ class ViewController: UIViewController {
         for i in 0..<30 {
             entries.append(BarChartDataEntry( x:Double(i),y: arr[i]))
             entries2.append(BarChartDataEntry(x: Double(Double(i)), y: arr2[i]))
-            lineEntries.append(ChartDataEntry(x: Double(i)+0.5, y: lineChartEntry[i]))
+            if i < lineChartEntry.count {
+                lineEntries.append(ChartDataEntry(x: Double(i)+0.5, y: lineChartEntry[i]))
+                if i == lineChartEntry.count - 1 {
+                    lineEntries2.append(ChartDataEntry(x: Double(i)+0.5, y: lineChartEntry2[i]))
+                }
+            } else {
+                lineEntries2.append(ChartDataEntry(x: Double(i)+0.5, y: lineChartEntry2[i]))
+            }
+            
             /**
             khởi taọ các giá trị
              x: giá trị của các dòng
@@ -126,33 +143,35 @@ class ViewController: UIViewController {
         let barChartSet2 = BarChartDataSet(entries: entries2,label: nil)
         
         let lineChartSet = LineChartDataSet(entries: lineEntries, label: nil)
+        let lineChartSet2 = LineChartDataSet(entries: lineEntries2, label: nil)
         
         //color
         var barChartSetColor1 = [NSUIColor]()
         var barChartSetColor2 = [NSUIColor]()
-        var lineChartSetColor = [NSUIColor]()
-        var lineChartSetCircleColor = [NSUIColor]()
         
         for i in 0 ... 29 {
             if i < day {
                 barChartSetColor1.append(NSUIColor.orange)
                 barChartSetColor2.append(NSUIColor.blue)
-                lineChartSetCircleColor.append(NSUIColor.green)
-                lineChartSetColor.append(NSUIColor.green)
+                
             } else {
                 barChartSetColor1.append(NSUIColor.gray.withAlphaComponent(0.8))
                 barChartSetColor2.append(NSUIColor.gray.withAlphaComponent(0.8))
-                lineChartSetColor.append(NSUIColor.gray)
-                lineChartSetCircleColor.append(NSUIColor.gray)
             }
         }
         
         barChartSet.colors = barChartSetColor1
         barChartSet2.colors = barChartSetColor2
-        lineChartSet.colors = lineChartSetColor
+        
+        lineChartSet.colors = [NSUIColor.green]
         
         lineChartSet.circleColors = [NSUIColor.white]
         lineChartSet.circleHoleColor = NSUIColor.green
+        lineChartSet2.circleColors = [NSUIColor.white]
+        lineChartSet2.circleHoleColor = NSUIColor.green
+        
+        lineChartSet2.colors = [NSUIColor.gray]
+        
         
         // bar chart set
         barChartSet.drawValuesEnabled = false
@@ -160,15 +179,23 @@ class ViewController: UIViewController {
         
         //line chart set
         lineChartSet.circleRadius = 5
-        lineChartSet.circleHoleRadius = 3
+        lineChartSet.circleHoleRadius = 4
         lineChartSet.drawValuesEnabled = false
         lineChartSet.lineWidth = 2
         lineChartSet.setDrawHighlightIndicators(true)
         lineChartSet.drawHorizontalHighlightIndicatorEnabled = false
-        lineChartSet.lineDashPhase = 5
-        lineChartSet.lineDashLengths = [5, 5]
+        
+        lineChartSet2.circleRadius = 5
+        lineChartSet2.circleHoleRadius = 4
+        lineChartSet2.drawValuesEnabled = false
+        lineChartSet2.lineWidth = 2
+        lineChartSet2.setDrawHighlightIndicators(true)
+        lineChartSet2.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartSet2.lineDashPhase = 5
+        lineChartSet2.lineDashLengths = [5, 5]
         
         lineChartSet.highlightColor = UIColor.gray.withAlphaComponent(0.5)
+        lineChartSet2.highlightColor = UIColor.gray.withAlphaComponent(0.5)
         
         
         
@@ -194,7 +221,7 @@ class ViewController: UIViewController {
         combineChart.xAxis.axisMaximum = start + gw + 28.5 // = 30 = số giá trị hiển thị trên trục x
         
         // line data
-        let lineData = LineChartData(dataSet: lineChartSet)
+        let lineData = LineChartData(dataSets: [lineChartSet,lineChartSet2])
         lineData.highlightEnabled = true
         chartData.lineData = lineData
         combineChart.data = chartData // hiển thị dữ liệu ( bắt đầu gọi combine chart render)
@@ -213,7 +240,7 @@ class ViewController: UIViewController {
         combineChart.rightAxis.enabled = false // ẩn thanh giá trị bên phải
     
         lineChartSet.highlightLineWidth = 32 // = 16 * 2 = tổng độ rộng 2 cột
-        
+        lineChartSet2.highlightLineWidth = 32
         print(combineChart.frame.width)
         
         
@@ -299,9 +326,54 @@ class ViewController: UIViewController {
 
 extension ViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        
-        
+        removeMarkerView()
+        self.createMarkerView(position: highlight.xPx)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isRemove = false
+        }
     }
     
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        removeMarkerView()
+    }
+    
+    func chartViewDidEndPanning(_ chartView: ChartViewBase) {
+        removeMarkerView()
+    }
+}
+
+extension ViewController {
+    func createMarkerView(position: CGFloat) {
+        let isLeft = position <= view.frame.width/2
+        if isLeft {
+            let markerView = UIView()
+            markerView.tag = 999
+            markerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(markerView)
+            markerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+            markerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+            markerView.widthAnchor.constraint(equalToConstant: 168).isActive = true
+            markerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            markerView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        } else {
+            let markerView = UIView()
+            markerView.tag = 999
+            markerView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(markerView)
+            markerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+            markerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
+            markerView.widthAnchor.constraint(equalToConstant: 168).isActive = true
+            markerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            markerView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        }
+    }
+    
+    func removeMarkerView() {
+        for subView in view.subviews {
+            if subView.tag == 999 {
+                subView.removeFromSuperview()
+            }
+        }
+    }
 }
 
