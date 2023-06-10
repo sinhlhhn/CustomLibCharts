@@ -139,11 +139,11 @@ class ViewController: UIViewController {
         
         // chart set
         
-        let barChartSet = BarChartDataSet(entries: entries,label: nil) // các giá trị cần hiển thị
-        let barChartSet2 = BarChartDataSet(entries: entries2,label: nil)
+        let barChartSet = BarChartDataSet(entries: entries,label: "") // các giá trị cần hiển thị
+        let barChartSet2 = BarChartDataSet(entries: entries2,label: "")
         
-        let lineChartSet = LineChartDataSet(entries: lineEntries, label: nil)
-        let lineChartSet2 = LineChartDataSet(entries: lineEntries2, label: nil)
+        let lineChartSet = LineChartDataSet(entries: lineEntries, label: "")
+        let lineChartSet2 = LineChartDataSet(entries: lineEntries2, label: "")
         
         //color
         var barChartSetColor1 = [NSUIColor]()
