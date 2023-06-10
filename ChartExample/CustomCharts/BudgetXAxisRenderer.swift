@@ -24,8 +24,8 @@ class BudgetXAxisRenderer: XAxisRenderer {
     @objc open override func drawLabels(context: CGContext, pos: CGFloat, anchor: CGPoint)
     {
         self.getDayOfMonth()
+        let xAxis = self.axis
         guard
-            let xAxis = self.axis as? XAxis,
             let transformer = self.transformer
             else { return }
         
@@ -99,7 +99,7 @@ class BudgetXAxisRenderer: XAxisRenderer {
                           x: position.x,
                           y: pos,
                           attributes: labelAttrs,
-                          constrainedToSize: labelMaxSize,
+                          constrainedTo: labelMaxSize,
                           anchor: anchor,
                           angleRadians: labelRotationAngleRadians)
             }
@@ -135,7 +135,7 @@ class BudgetXAxisRenderer: XAxisRenderer {
                           x: position.x,
                           y: pos,
                           attributes: lastLabelAttrs,
-                          constrainedToSize: labelMaxSize,
+                          constrainedTo: labelMaxSize,
                           anchor: anchor,
                           angleRadians: labelRotationAngleRadians)
             }
