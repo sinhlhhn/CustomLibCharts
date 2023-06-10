@@ -304,12 +304,12 @@ class ViewController: UIViewController {
         let transformer = combineChart.getTransformer(forAxis: .right)
         let animator = combineChart.chartAnimator
         
-        let render = BudgetCombinedChartRenderer(chart: combineChart, animator: animator!, viewPortHandler: viewPortHandler!)
+        let render = BudgetCombinedChartRenderer(chart: combineChart, animator: animator, viewPortHandler: viewPortHandler)
         
         
         
-        combineChart.xAxisRenderer = BudgetXAxisRenderer(viewPortHandler: viewPortHandler!, xAxis: xAxis, transformer: transformer)
-        combineChart.leftYAxisRenderer = BudgetYAxisRenderer(viewPortHandler: viewPortHandler!, yAxis: yAxis, transformer: transformer)
+        combineChart.xAxisRenderer = BudgetXAxisRenderer(viewPortHandler: viewPortHandler, axis: xAxis, transformer: transformer)
+        combineChart.leftYAxisRenderer = BudgetYAxisRenderer(viewPortHandler: viewPortHandler, axis: yAxis, transformer: transformer)
         
         self.combineChart.renderer = render
         
