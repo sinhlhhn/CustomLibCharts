@@ -326,19 +326,19 @@ class ViewController: UIViewController {
 
 extension ViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        removeMarkerView()
-        self.createMarkerView(position: highlight.xPx)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.isRemove = false
-        }
+//        removeMarkerView()
+//        self.createMarkerView(position: highlight.xPx)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.isRemove = false
+//        }
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        removeMarkerView()
+//        removeMarkerView()
     }
     
     func chartViewDidEndPanning(_ chartView: ChartViewBase) {
-        removeMarkerView()
+//        removeMarkerView()
     }
 }
 
