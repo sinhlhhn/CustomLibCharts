@@ -215,14 +215,14 @@ class ViewController: UIViewController {
         chartData.notifyDataChanged()
         chartData.barData =  test // chuyển thành dữ liệu
         
-        test.highlightEnabled = false
+        test.isHighlightEnabled = false
         
         let start = 0.5
         combineChart.xAxis.axisMaximum = start + gw + 28.5 // = 30 = số giá trị hiển thị trên trục x
         
         // line data
         let lineData = LineChartData(dataSets: [lineChartSet,lineChartSet2])
-        lineData.highlightEnabled = true
+        lineData.isHighlightEnabled = true
         chartData.lineData = lineData
         combineChart.data = chartData // hiển thị dữ liệu ( bắt đầu gọi combine chart render)
         
