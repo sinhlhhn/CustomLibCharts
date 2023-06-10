@@ -10,7 +10,7 @@ import Foundation
 import Charts
 
 class BudgetCombineChartView: CombinedChartView {
-    internal var _fillFormatter: IFillFormatter!
+    internal var _fillFormatter: FillFormatter!
     
     open override func initialize()
     {
