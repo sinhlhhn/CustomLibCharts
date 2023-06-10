@@ -18,9 +18,7 @@ class BudgetYAxisRenderer: YAxisRenderer {
         offset: CGFloat,
         textAlign: NSTextAlignment)
     {
-        guard
-            let yAxis = self.axis as? YAxis
-            else { return }
+        let yAxis = self.axis
         
         let labelFont = yAxis.labelFont
         let labelTextColor = yAxis.labelTextColor
@@ -34,10 +32,8 @@ class BudgetYAxisRenderer: YAxisRenderer {
         {
             let text = yAxis.getFormattedLabel(i)
             
-            ChartUtils.drawText(
-                context: context,
-                text: text,
-                point: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset),
+            context.drawText(
+                text, at: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset),
                 align: textAlign,
                 attributes: [.font: labelFont, .foregroundColor: labelTextColor]
             )
@@ -45,10 +41,9 @@ class BudgetYAxisRenderer: YAxisRenderer {
         
         // budget intelligent
         let text = yAxis.getFormattedLabel(to - 1)
-        ChartUtils.drawText(
-            context: context,
-            text: text,
-            point: CGPoint(x: fixedPosition + xOffset, y: positions[to - 1].y + offset),
+        context.drawText(
+            text,
+            at: CGPoint(x: fixedPosition + xOffset, y: positions[to - 1].y + offset),
             align: textAlign,
             attributes: [.font: labelFont, .foregroundColor: UIColor.red]
         )
