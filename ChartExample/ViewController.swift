@@ -48,9 +48,9 @@ class ViewController: UIViewController {
         view.addSubview(combineChart)
         
         // marker
-//        let markerView = BalloonMarker(color: .black, font: UIFont.boldSystemFont(ofSize: 14), textColor: .white, insets: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
-//        markerView.chartView = combineChart
-//        combineChart.marker = markerView
+        let markerView = BalloonMarker(color: .black, font: UIFont.boldSystemFont(ofSize: 14), textColor: .white, insets: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
+        markerView.chartView = combineChart
+        combineChart.marker = markerView
         
         // dòng đỏ trên cùng
         
