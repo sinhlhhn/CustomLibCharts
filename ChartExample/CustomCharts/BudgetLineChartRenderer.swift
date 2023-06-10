@@ -19,20 +19,16 @@ class BudgetLineChartRenderer: LineChartRenderer {
         
         for i in 0 ..< lineData.dataSetCount
         {
-            guard let set = lineData.getDataSetByIndex(i) else { continue }
+            guard let set = lineData.dataSets[i] as? LineChartDataSet else { continue }
             
             if set.isVisible
             {
-                if !(set is ILineChartDataSet)
-                {
-                    fatalError("Datasets for LineChartRenderer must conform to ILineChartDataSet")
-                }
-                drawDataSet(context: context, dataSet: set as! ILineChartDataSet, index: i)
+                drawDataSet(context: context, dataSet: set, index: i)
             }
         }
     }
     
-    @objc func drawDataSet(context: CGContext, dataSet: ILineChartDataSet, index: Int)
+    @objc func drawDataSet(context: CGContext, dataSet: LineChartDataSetProtocol, index: Int)
     {
         if dataSet.entryCount < 1
         {
@@ -70,7 +66,7 @@ class BudgetLineChartRenderer: LineChartRenderer {
     }
     
     
-    @objc open override func drawHighlightLines(context: CGContext, point: CGPoint, set: ILineScatterCandleRadarChartDataSet)
+    @objc open override func drawHighlightLines(context: CGContext, point: CGPoint, set: LineScatterCandleRadarChartDataSetProtocol)
     {
         
         // draw vertical highlight lines
