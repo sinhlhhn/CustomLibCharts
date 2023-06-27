@@ -82,8 +82,8 @@ class ViewController: UIViewController {
                              10,11,10,9,8,7,2,
                              10,11,10,9,8,7,2,
                              10,11]
-        let lineChartEntry: [Double] = [12,11]
-        let lineChartEntry2: [Double] = [11,11,9,6,4,2,0,
+        let lineChartEntry: [Double] = [12,11,9,6,5]
+        let lineChartEntry2: [Double] = [12,11,9,6,5,5,0,
                                         12,11,11,9,6,4,2,0,
                                         12,11,11,9,6,4,2,0,
                                         12,11,11,9,6,4,2,0,
